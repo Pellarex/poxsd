@@ -1,4 +1,4 @@
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://poxsd.netlify.app/POXSD.xsd" xmlns:tns="https://poxsd.netlify.app/POXSD.xsd">
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://poxsd.netlify.app/POXSD.xsd" xmlns="https://poxsd.netlify.app/POXSD.xsd">
   <xs:element name="PurchaseOrder">
     <xs:complexType>
       <xs:sequence>
