@@ -1,0 +1,240 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="PurchaseOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="PurchaseOrderHeader">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PurchaseOrderInfo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="FuncFlag"/>
+                    <xs:element type="xs:string" name="Function"/>
+                    <xs:element type="xs:string" name="PurchaseOrderNumber"/>
+                    <xs:element type="xs:date" name="IssuedDate"/>
+                    <xs:element type="xs:date" name="ExFactoryDate"/>
+                    <xs:element type="xs:date" name="DeadlineDate"/>
+                    <xs:element type="xs:date" name="ShipWindowBeginsDate"/>
+                    <xs:element type="xs:date" name="ShipWindowEndsDate"/>
+                    <xs:element type="xs:decimal" name="OrderQuantity"/>
+                    <xs:element type="xs:string" name="OrderQuantityUOM"/>
+                    <xs:element type="xs:string" name="PackagingQuantity"/>
+                    <xs:element type="xs:string" name="PackagingQuantityUOM"/>
+                    <xs:element type="xs:string" name="TotalValue"/>
+                    <xs:element type="xs:string" name="TotalValueCurrency"/>
+                    <xs:element type="xs:string" name="GeneralGoodsDescription"/>
+                    <xs:element type="xs:string" name="PurchasingReference"/>
+                    <xs:element type="xs:string" name="QCIndicator"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PurchaseOrderRoutingInfo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="ModeOfTransport"/>
+                    <xs:element type="xs:string" name="IncoTermCode"/>
+                    <xs:element type="xs:string" name="IncoTermLocation"/>
+                    <xs:element type="xs:string" name="CountryOfOrigin"/>
+                    <xs:element type="xs:string" name="CityOFExport"/>
+                    <xs:element type="xs:string" name="ExportProvState"/>
+                    <xs:element type="xs:string" name="CountryOfExport"/>
+                    <xs:element type="xs:string" name="ExportUNLOC"/>
+                    <xs:element type="xs:string" name="DestinationCity"/>
+                    <xs:element type="xs:string" name="DestinationProvState"/>
+                    <xs:element type="xs:string" name="DestinationCountry"/>
+                    <xs:element type="xs:string" name="DestinationUNLOC"/>
+                    <xs:element type="xs:string" name="FinalDestinationCity"/>
+                    <xs:element type="xs:string" name="FinalDestinationProvState"/>
+                    <xs:element type="xs:string" name="FinalDestinationCountry"/>
+                    <xs:element type="xs:string" name="FinalDestinationUNLOC"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PurchaseOrderNotes">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PurchaseOrderNote" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="NoteTypeCode"/>
+                          <xs:element type="xs:string" name="NoteTypeDesc"/>
+                          <xs:element type="xs:string" name="Notes"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PurchaseOrderParties">
+                <xs:complexType>
+                  <xs:choice maxOccurs="unbounded" minOccurs="0">
+                    <xs:element name="PurchaseOrderParty">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="PartyType"/>
+                          <xs:element type="xs:string" name="PartyDesc"/>
+                          <xs:element type="xs:string" name="PartyCode"/>
+                          <xs:element type="xs:string" name="PartyName"/>
+                          <xs:element type="xs:string" name="PartyAddr1"/>
+                          <xs:element type="xs:string" name="PartyAddr2"/>
+                          <xs:element type="xs:string" name="PartyAddr3"/>
+                          <xs:element type="xs:string" name="PartyCity"/>
+                          <xs:element type="xs:string" name="PartyProvState"/>
+                          <xs:element type="xs:string" name="PartyCountry"/>
+                          <xs:element type="xs:string" name="PartyUNLOC"/>
+                          <xs:element type="xs:string" name="PartyPostalCode"/>
+                          <xs:element type="xs:string" name="PartyPhone"/>
+                          <xs:element type="xs:string" name="PartyFax"/>
+                          <xs:element type="xs:string" name="PartyContact"/>
+                          <xs:element type="xs:string" name="RemoveMe"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:choice>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PurchaseOrderDetail">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PurchaseOrderLines">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PurchaseOrderLine" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:decimal" name="LineNbr"/>
+                          <xs:element type="xs:string" name="Description"/>
+                          <xs:element type="xs:string" name="ProductID"/>
+                          <xs:element type="xs:string" name="AltProductID"/>
+                          <xs:element type="xs:decimal" name="OrderQuantity"/>
+                          <xs:element type="xs:string" name="OrderQuantityUOM"/>
+                          <xs:element type="xs:decimal" name="PackagingQuantity"/>
+                          <xs:element type="xs:string" name="PackagingQuantityUOM"/>
+                          <xs:element type="xs:decimal" name="Volume"/>
+                          <xs:element type="xs:string" name="VolumeUOM"/>
+                          <xs:element type="xs:decimal" name="GrossWeight"/>
+                          <xs:element type="xs:string" name="GrossWeightUOM"/>
+                          <xs:element type="xs:decimal" name="NetWeight"/>
+                          <xs:element type="xs:string" name="NetWeightUOM"/>
+                          <xs:element type="xs:decimal" name="UnitPrice"/>
+                          <xs:element type="xs:decimal" name="ExtendedAmount"/>
+                          <xs:element type="xs:string" name="ExtendedAmountCurrency"/>
+                          <xs:element type="xs:date" name="ExFactoryDate"/>
+                          <xs:element type="xs:date" name="SuggestExFact" minOccurs="0"/>
+                          <xs:element type="xs:date" name="DeadlineDate"/>
+                          <xs:element type="xs:date" name="ShipWindowBeginsDate"/>
+                          <xs:element type="xs:date" name="ShipWindowEndsDate"/>
+                          <xs:element type="xs:string" name="GoodsCountryOfOrigin"/>
+                          <xs:element type="xs:string" name="HSTariffClassificationNbr"/>
+                          <xs:element type="xs:string" name="PreferentialTariffTreatmentCode"/>
+                          <xs:element type="xs:string" name="AddTariffAppCriteria1"/>
+                          <xs:element type="xs:string" name="AddTariffAppCriteria2"/>
+                          <xs:element type="xs:string" name="AlternateGoodsDescforCustoms"/>
+                          <xs:element type="xs:string" name="TariffSpecificProductID"/>
+                          <xs:element type="xs:string" name="LineCancelDeleteFlag"/>
+                          <xs:element type="xs:string" name="RemoveMe"/>
+                          <xs:element name="Attributes">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Attribute" maxOccurs="unbounded" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="Identifier"/>
+                                      <xs:element type="xs:string" name="ValueType"/>
+                                      <xs:element type="xs:string" name="Value"/>
+                                      <xs:element type="xs:string" name="RemoveMe"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="PurchaseOrderParties">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="PurchaseOrderParty">
+                                  <xs:complexType mixed="true">
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="PartyType"/>
+                                      <xs:element type="xs:string" name="PartyDesc"/>
+                                      <xs:element type="xs:string" name="PartyCode"/>
+                                      <xs:element type="xs:string" name="PartyName"/>
+                                      <xs:element type="xs:string" name="PartyAddr1"/>
+                                      <xs:element type="xs:string" name="PartyAddr2"/>
+                                      <xs:element type="xs:string" name="PartyAddr3"/>
+                                      <xs:element type="xs:string" name="PartyCity"/>
+                                      <xs:element type="xs:string" name="PartyProvState"/>
+                                      <xs:element type="xs:string" name="PartyCountry"/>
+                                      <xs:element type="xs:string" name="PartyUNLOC"/>
+                                      <xs:element type="xs:string" name="PartyPostalCode"/>
+                                      <xs:element type="xs:string" name="PartyPhone"/>
+                                      <xs:element type="xs:string" name="PartyFax"/>
+                                      <xs:element type="xs:string" name="PartyContact"/>
+                                      <xs:element type="xs:string" name="RemoveMe" minOccurs="0"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="PurchaseOrderPackages">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="PurchaseOrderPackage" maxOccurs="unbounded" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:decimal" name="Quantity"/>
+                                      <xs:element type="xs:int" name="Height"/>
+                                      <xs:element type="xs:int" name="Length"/>
+                                      <xs:element type="xs:int" name="Width"/>
+                                      <xs:element type="xs:string" name="DimensionsUOM"/>
+                                      <xs:element type="xs:string" name="Volume"/>
+                                      <xs:element type="xs:string" name="RemoveMe"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="DangerousGoodsLines">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="DangerousGoodsLine" maxOccurs="unbounded" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="ProShipName"/>
+                                      <xs:element type="xs:string" name="EmergencyContact"/>
+                                      <xs:element type="xs:string" name="EmergencyTel"/>
+                                      <xs:element type="xs:string" name="ClassNo"/>
+                                      <xs:element type="xs:string" name="UndgNo"/>
+                                      <xs:element type="xs:string" name="PackRisk"/>
+                                      <xs:element type="xs:int" name="DgidNo"/>
+                                      <xs:element type="xs:string" name="PackCode"/>
+                                      <xs:element type="xs:decimal" name="FPValue"/>
+                                      <xs:element type="xs:string" name="FPUom"/>
+                                      <xs:element type="xs:decimal" name="NEQValue"/>
+                                      <xs:element type="xs:string" name="NEQUom"/>
+                                      <xs:element type="xs:string" name="SpecialInstructions"/>
+                                      <xs:element type="xs:string" name="RemoveMe"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
